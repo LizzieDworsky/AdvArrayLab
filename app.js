@@ -116,7 +116,7 @@ let dishes = [
     },
 ];
 
-testCurrentProblem(problemEightB());
+testCurrentProblem(problemTwelve());
 
 //Example function
 //IMPORTANT: Take the time to step through this example function with a breakpoint until you could explain what is going on to someone else before starting this lab.
@@ -318,8 +318,29 @@ function problemEightB() {
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
+function problemEleven() {
+    let results = dishes.filter(function (element) {
+        if (
+            element.ingredients.includes("tomato") ||
+            element.ingredients.includes("cheese")
+        ) {
+            return true;
+        }
+    });
+    return results;
+}
 
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
+function problemTwelve() {
+    let results = dishes
+        .map(function (element) {
+            return element.servings;
+        })
+        .reduce(function (total, element) {
+            return total + element;
+        });
+    return results;
+}
 
 //13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
