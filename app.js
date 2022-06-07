@@ -116,7 +116,7 @@ let dishes = [
     },
 ];
 
-testCurrentProblem(problemFour());
+testCurrentProblem(problemFive());
 
 //Example function
 //IMPORTANT: Take the time to step through this example function with a breakpoint until you could explain what is going on to someone else before starting this lab.
@@ -228,6 +228,14 @@ function problemFour() {
 
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
+function problemFive() {
+    let results = dishes.filter(function (element) {
+        if (element.servings % 2 === 0) {
+            return true;
+        }
+    });
+    return results;
+}
 
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
