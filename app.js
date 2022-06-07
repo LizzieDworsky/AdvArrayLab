@@ -116,7 +116,7 @@ let dishes = [
     },
 ];
 
-testCurrentProblem(problemNine());
+testCurrentProblem(problemTen());
 
 //Example function
 //IMPORTANT: Take the time to step through this example function with a breakpoint until you could explain what is going on to someone else before starting this lab.
@@ -291,6 +291,18 @@ function problemNine() {
 }
 
 //10. Create a function that will use advanced array methods on the 'dishes' array and return the result ["Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"]
+function problemTen() {
+    let results = dishes
+        .filter(function (element) {
+            if (element.cuisine === "Vegetarian") {
+                return true;
+            }
+        })
+        .map(function (element) {
+            return element.cuisine + " " + element.name;
+        });
+    return results;
+}
 
 //BONUS
 
