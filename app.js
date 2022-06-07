@@ -2,6 +2,11 @@
 //These methods will be used extensively on future projects
 
 "use strict";
+
+function testCurrentProblem(problem) {
+    console.log(problem);
+}
+
 //Dataset
 let dishes = [
     {
@@ -111,6 +116,8 @@ let dishes = [
     },
 ];
 
+testCurrentProblem(problemThree());
+
 //Example function
 //IMPORTANT: Take the time to step through this example function with a breakpoint until you could explain what is going on to someone else before starting this lab.
 
@@ -146,11 +153,10 @@ function problemOne() {
     });
     return results;
 }
-// console.log(problemOne());
 
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
 //Filter
-function problemTwo(userSelection) {
+function runProblemTwo(userSelection) {
     let results = dishes.filter(function (element) {
         if (element.cuisine === userSelection) {
             return true;
@@ -192,13 +198,22 @@ function getUserInput() {
     }
     return userInput;
 }
-function runProblemTwo() {
+function problemTwo() {
     let userInput = getUserInput();
-    console.log(problemTwo(userInput));
+    let selection = runProblemTwo(userInput);
+    return selection;
 }
-runProblemTwo();
+
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
+function problemThree() {
+    let results = dishes.filter(function (element) {
+        if (element.cuisine === "Italian" && element.servings > 5) {
+            return true;
+        }
+    });
+    return results;
+}
 
 //4. Create a function that will return only dishes whose id number matches their serving count.
 //Filter
