@@ -116,7 +116,7 @@ let dishes = [
     },
 ];
 
-testCurrentProblem(problemFive());
+testCurrentProblem(problemSeven());
 
 //Example function
 //IMPORTANT: Take the time to step through this example function with a breakpoint until you could explain what is going on to someone else before starting this lab.
@@ -241,9 +241,36 @@ function problemFive() {
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Double Hint: Research 'javascript does array include item'
 //Filter
+function problemSix() {
+    let results = dishes.filter(function (element) {
+        if (element.ingredients.includes("chickpea")) {
+            return true;
+        }
+    });
+    return results;
+}
 
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
+function runIngredientFilter(userInput) {
+    let results = dishes.filter(function (element) {
+        if (element.ingredients.includes(userInput)) {
+            return true;
+        }
+    });
+    return results;
+}
+function userIngredientSelector() {
+    let userInput = prompt(
+        "Already have an ingredient? Want to see what you can make with it? Enter your ingredients name using only lowercase letters: "
+    );
+    return userInput;
+}
+function problemSeven() {
+    let userInput = userIngredientSelector();
+    let results = runIngredientFilter(userInput);
+    return results;
+}
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
