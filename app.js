@@ -116,7 +116,7 @@ let dishes = [
     },
 ];
 
-testCurrentProblem(problemTen());
+testCurrentProblem(problemEightB());
 
 //Example function
 //IMPORTANT: Take the time to step through this example function with a breakpoint until you could explain what is going on to someone else before starting this lab.
@@ -307,6 +307,13 @@ function problemTen() {
 //BONUS
 
 //8b. Use the filter method to eliminate duplicate from problem 8a.
+function problemEightB() {
+    let results = problemEight();
+    results = results.filter(function (element, index) {
+        return results.indexOf(element) === index;
+    });
+    return results;
+}
 
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
