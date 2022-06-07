@@ -129,8 +129,8 @@ function filterExample() {
     return results;
 }
 
-let mexicanFood = filterExample();
-console.log("mexicanFood from filterExample", mexicanFood);
+// let mexicanFood = filterExample();
+// console.log("mexicanFood from filterExample", mexicanFood);
 
 //Reminder: Do not move on to problem one until understand the example completely!!
 //1. Create a function that will return all dishes with the cuisine type of "vegetarian"
@@ -144,13 +144,59 @@ function problemOne() {
         // if(el.cuisine === "Vegetarian") return true
         // return (element.cuisine === "Vegetarian")
     });
-
     return results;
 }
+// console.log(problemOne());
 
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
 //Filter
-
+function problemTwo(userSelection) {
+    let results = dishes.filter(function (element) {
+        if (element.cuisine === userSelection) {
+            return true;
+        }
+    });
+    return results;
+}
+function getUserInput() {
+    let userInput = parseInt(
+        prompt(
+            "What cuisine options would you like to see. Enter 1 for Vietnamese, 2 for Hungarian, 3 for Vegetarian, 4 for Irish, 5 for French, 6 for Mexican, or 7 for Italian: "
+        )
+    );
+    switch (userInput) {
+        case 1:
+            userInput = "Vietnamese";
+            break;
+        case 2:
+            userInput = "Hungarian";
+            break;
+        case 3:
+            userInput = "Vegetarian";
+            break;
+        case 4:
+            userInput = "Irish";
+            break;
+        case 5:
+            userInput = "French";
+            break;
+        case 6:
+            userInput = "Mexican";
+            break;
+        case 7:
+            userInput = "Italian";
+            break;
+        default:
+            console.log("Sorry, didn't catch that.");
+            break;
+    }
+    return userInput;
+}
+function runProblemTwo() {
+    let userInput = getUserInput();
+    console.log(problemTwo(userInput));
+}
+runProblemTwo();
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
